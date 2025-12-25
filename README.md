@@ -52,12 +52,12 @@ Require your class members to be divided with an empty line by this scheme:
 
 **Example:**
 ```typescript
-    Invalid:
+    // Invalid:
     private readonly first = 0;
     private readonly second = 1;
     private third = 2
 
-    Valid:
+    // Valid:
     private readonly first = 0;
 
     private second = 1;
@@ -76,12 +76,12 @@ Require your class members to be **readonly** ANYWAY if it isn't used:
 
 **Example:**
 ```typescript
-    Invalid:
+    // Invalid:
     private first = 0;
     protected second = 1;
     public third = 2
 
-    Valid:
+    // Valid:
     private readonly first = 0;
     protected readonly third = 2
     public readonly fifth = 1;
