@@ -7,6 +7,9 @@ on:
 jobs:
     build-and-publish:
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
         steps:
             - name: Check out repository
               uses: actions/checkout@v4
@@ -15,8 +18,8 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: 20
-                  scope: '@dr.edisn'
-                  registry-url: https://registry.npmjs.org
+                  scope: '@dr-edisn'
+                  registry-url: https://npm.pkg.github.com
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
