@@ -19,11 +19,11 @@ jobs:
                   node-version: 20
                   scope: '@dr-edisn'
                   registry-url: https://npm.pkg.github.com
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
             - name: Install dependencies
               run: npm ci
               
             - name: Publish
               run: npm publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
